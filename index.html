@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Esso-IDP</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img class="esso_logo" src="image2.jpeg">
+                <h2 class="logo">ESSO-IDP</h2>
+            </div>
+            <div class="menu">
+                <ul class="ul1">
+                    <li>
+                        <a href="" title="Contacts">CONTACTS</a>
+                        <ul class="ul2">
+                            <li>
+                                <a href="mailto:ciersainformation@gmail.com?subject=Contact%20depuis%20esso-idp.com">Mail.com</a>
+                            </li>
+                            <li>
+                                <a href="tel:+237655271649">Téléphone(+237)</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://www.forum.esso-idp.com/" title="Forum">FORUM</a>
+                    </li>
+                    <li>
+                        <a href="" title="Boutique">BOUTIQUE</a>
+                    </li>
+                    <li>
+                        <a href="" title="Métiers">METIERS</a>
+                        <ul class="ul2">
+                            <li>
+                               <a href="Esso-idp.html">DE LA CREATIVITE</a>
+                            </li>
+                            <li>
+                               <a href="Esso-idp3.html">DE L'INNOVATION</a>
+                            </li>
+                            <li>
+                              <a href="Esso-idp2.html">DE L'INVENTIVITE</a>
+                            </li>
+                            <li>
+                               <a href="Esso-idp4.html">DE LA CAPITALISATION</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" type="button", role="button" id="displayForm">SE CONNECTER</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type to text">
+                <a href="#"><button class="btn"> Search</button></a>
+            </div>
+
+        </div>
+        <div class="content">
+            <h1>PLATEFORME <br> DE<span> PROFESSIONALISATION</span> & <br> DE<span> CREATIVITE</span></h1>
+            <p class="par">S'aventurer à Créer sans mode de pensée prérequis préalabre 
+                est<br>simplement une illusion et une perte de temps alors <br>professionnaliser vous 
+                d'abord après vous pourrez penser <br> facilement un concept nouveau.</p>
+                <button class="cn"><a href="mailto:ciersainformation@gmail.com?subject=Contact%20depuis%20esso-idp.com"><i>NOUS CONTACTER</i></a></button>
+                
+                <!--<div class="form">-->
+					<section class="form">
+						<div class="sec-container">
+							<div class="formWrapper">
+								<div class="card">
+									<div class="card-header">
+										<div id="forLogin" class="form-header active ecran ">Se connecter</div>
+										<div id="forRegister" class="form-header  ecran">S'inscrire</div>
+									</div>
+									<div class="card-body" id="formContainer">
+										<form action="" id="loginForm">
+											<input type="text" class="form-control" placeholder="@Utilisateur" />
+											<input type="password" class="form-control" placeholder="Mot de passe" />
+											<label for="remember">
+												<input type="checkbox" class="form-check" id="remember" />
+												Se Souvenir de moi
+											</label>
+											<button class="formButton ecran">Connexion</button>
+											<p class="liw">Se connecter avec</p>
+											<div class="icons">
+												<a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+												<a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+												<a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+												<a href="#"><ion-icon name="logo-google"></ion-icon></a>
+												<a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+											</div>
+										</form>
+		
+										<form action="" id="registerForm" class="toggleForm">
+											<input type="text" class="form-control" placeholder="@utilisateur..." />
+											<input type="text" class="form-control" placeholder="Mot de passe..." />
+											<input type="text" class="form-control" placeholder="Confirmer mot de passe..." />
+											<label for="remember">
+												<input type="checkbox" class="form-check" id="privacy" />
+												J'accepte les termes de l'accord
+											</label>
+											<button class="formButton ecran">Inscription</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+                <!--</div>-->
+        </div>
+    </div>
+    <script type="text/javascript">
+		function _(e) {
+			return document.getElementById(e);
+		}
+		let displayform = _('displayForm');
+		let forlogin = _('forLogin');
+		let loginForm = _('loginForm');
+		let forRegister = _('forRegister');
+		let registerForm = _('registerForm');
+		let formContainer = _('formContainer');
+		displayform.addEventListener('click', showForm);
+
+		forlogin.addEventListener('click', (e) => {
+			e.preventDefault;
+			forRegister.classList.remove('active');
+			forlogin.classList.add('active');
+			if (loginForm.classList.contains('toggleForm')) {
+				formContainer.style.transform = 'translate(0%)';
+				formContainer.style.transition = 'transform .5s';
+				loginForm.classList.remove('toggleForm');
+				registerForm.classList.add('toggleForm');
+			}
+		});
+
+		forRegister.addEventListener('click', (e) => {
+			e.preventDefault;
+			forlogin.classList.remove('active');
+			forRegister.classList.add('active');
+			if (registerForm.classList.contains('toggleForm')) {
+				formContainer.style.transform = 'translate(-100%)';
+				formContainer.style.transition = 'transform .5s';
+				registerForm.classList.remove('toggleForm');
+				loginForm.classList.add('toggleForm');
+			}
+		});
+
+		function showForm() {
+			document.querySelector('.formWrapper .card').classList.toggle('show');
+		}
+	</script>
+	<script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+</body>
+</html>
